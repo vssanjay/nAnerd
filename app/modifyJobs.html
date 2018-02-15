@@ -1,0 +1,53 @@
+<div ng-controller="modifyJobs">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Need A nerd</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#!/dashboardEmployer">Home</a></li>
+                <li><a href="#!/employerProfile">Profile</a></li>
+                <li><a href="#!/addJobs">Add Jobs</a></li>
+                <li><a href="#!/listAllJobs">List All Jobs</a></li>
+                <li><a href="#!/modifyJobs">Modify Jobs</a></li>
+                <li><a href="#!/viewAllStudents">View All Students</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!/notifications">Notifications</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="col-md-9 col-md-offset-1">
+        <br>
+        Click on a Row to Edit!
+
+            <table class="table table-hover">
+                <th> JOB ID </th>
+                <th> JOB NAME </th>
+                <th> JOB DESC </th>
+                <th> SKILLS </th>
+                <th> START DATA</th>
+                <th> END DATE </th>
+                <th> SALARY </th>
+                <th> EMPLOYEE USER NAME</th>
+                <th> EMPLOYER ORGANIZATION </th>
+                <th> VIEWABLE </th>
+                <tbody ng-repeat= "(key,value) in jobListEmployer">
+                <tr ng-repeat="(key,v) in value" ng-click="modifySpecificJob(v)">
+                    <td ng-repeat="(key,val) in v" >
+                        {{val}}
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+
+
+
+    </div>
+
+</div>

@@ -1,0 +1,63 @@
+<div ng-controller="employerProfileController as vm">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" >Need A nerd</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#!/dashboardEmployer">Home</a></li>
+                <li><a href="#!/employerProfile">Profile</a></li>
+                <li><a href="#!/addJobs">Add Jobs</a></li>
+                <li><a href="#!/listAllJobs">List All Jobs</a></li>
+                <li><a href="#!/modifyJobs">Modify Jobs</a></li>
+                <li><a href="#!/viewAllStudents">View All Students</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!/notifications">Notifications</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="col-md-9 col-md-offset-5">
+
+        <div class = "container">
+
+            <div class="center"><h3 style="color:#00b1b1;"> {{vm.firstName}} {{vm.lastName}} </h3></span> </div>
+
+        </div>
+
+    </div>
+
+    <br>
+    <div class="col-md-9 col-md-offset-1">
+        <div style="font-family: Calibri; font-size:20px ">
+
+            About me : &nbsp;&nbsp; {{vm.aboutMe}}
+            <br>
+            Position : &nbsp;&nbsp; {{vm.position}}
+            <br>
+            Department : &nbsp;&nbsp; {{vm.department}}
+            <br>
+            Phone Number : &nbsp;&nbsp; {{vm.phoneNumber}}
+
+        </div>
+
+    </div>
+    <style type="text/css">
+        #footer {
+            position : absolute;
+            bottom : 10px;
+            height : 90px;
+            margin-top : 40px;
+        }
+    </style>
+    <div id="footer" class="col-md-9 col-md-offset-1">
+
+
+        <button class="btn btn-success" ng-click="editProfile()" >Edit Profile</button>
+
+    </div>
+
+
+</div>

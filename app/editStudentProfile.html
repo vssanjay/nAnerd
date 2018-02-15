@@ -1,0 +1,29 @@
+<div class="col-md-9 col-md-offset-1" ng-controller="editStudentProfile">
+
+    <h2>Edit Your Profile</h2>
+
+    <div class = "col-md-9 col-md-offset-1">
+        <form ng-submit="saveProfile()">
+            <div class="form-group">
+                <label for="aboutMe">About me</label>
+                <textarea rows="4" cols="20" id="aboutMe" class="form-control" ng-model="aboutMe"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="skills">Skills</label>
+                <textarea rows="2" cols="20" id="skills" class="form-control" ng-model="skills"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="major">Major</label>
+                <input type="text" class="form-control" id="major" ng-model="major">
+            </div>
+            <div class="form-group">
+                <label for="dateOfBirth">Date Of Birth</label>
+                <input type="date" class="form-control" id="dateOfBirth" ng-model="dateOfBirth">
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>

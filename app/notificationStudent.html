@@ -1,0 +1,39 @@
+<div ng-controller="notifyStudentController as vm">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Need A nerd</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#!/dashboardStudents">Home</a></li>
+                <li><a href="#!/studentProfile">Profile</a></li>
+                <li><a href="#!/applyJobs">Apply Jobs</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!/notificationStudent">Notifications</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="col-md-9 col-md-offset-1">
+    <table class="table table-hover">
+        <th> JOB ID </th>
+        <th> JOB NAME </th>
+        <th> EMPLOYER ORGANIZATION </th>
+
+        <tbody ng-repeat= "(key,value) in vm.interestedJobs">
+        <tr ng-repeat="(key,v) in value" ng-click = "employerDetails(v)">
+            <td ng-repeat="(key,val) in v " >
+                {{val}}
+            </td>
+
+        </tr>
+        </tbody>
+
+
+
+    </table>
+    </div>
+</div>

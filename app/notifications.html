@@ -1,0 +1,63 @@
+<div ng-controller="notificationsController as vm">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" >Need A nerd</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#!/dashboardEmployer">Home</a></li>
+                <li><a href="#!/employerProfile">Profile</a></li>
+                <li><a href="#!/addJobs">Add Jobs</a></li>
+                <li><a href="#!/listAllJobs">List All Jobs</a></li>
+                <li><a href="#!/modifyJobs">Modify Jobs</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!/notifications">Notifications</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="col-md-9 col-md-offset-1">
+        <h4 style="color:indianred"> <b><u>NEW APPLICANTS </u></b></h4>
+
+        <table class="table table-hover">
+            <th> JOB ID </th>
+            <th> EMPLOYER NAME </th>
+            <th> STUDENT NAME </th>
+
+            <tbody ng-repeat= "(key,value) in newApplicationList">
+            <tr ng-repeat="(key,v) in value" ng-click="profileView(v)">
+                <td ng-repeat="(key,val) in v" >
+                    {{val}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="col-md-9 col-md-offset-1">
+        <h4 style="color:green"> <b><u>ALL APPLICANTS </u></b></h4>
+        <table class="table table-hover">
+            <th> JOB ID </th>
+            <th> EMPLOYER NAME </th>
+            <th> STUDENT NAME </th>
+
+            <tbody ng-repeat= "(key,value) in applicationList">
+            <tr ng-repeat="(key,v) in value" ng-click="profileView(v)">
+                <td ng-repeat="(key,val) in v" >
+                    {{val}}
+                </td>
+
+            </tr>
+            </tbody>
+
+
+
+        </table>
+
+    </div>
+</div>

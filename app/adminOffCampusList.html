@@ -1,0 +1,72 @@
+<div ng-controller="adminOffCampusNotification as vm">
+
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Need A nerd Admin</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#!/adminDashboard">Home</a></li>
+                <li><a href="#!/viewAllStudents">All Students</a></li>
+                <li><a href="#!/viewAllEmployers">All Employers</a></li>
+                <li><a href="#!/viewAllJobs">All Jobs</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!/approvalOffCampus">Off Campus Employer Requests</a></li>
+                <li><a href="#!/login">Logout</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="col-md-9 col-md-offset-1">
+        <h4 style="color:indianred"> <b><u>NEED APPROVAL </u></b></h4>
+
+        <table class="table table-hover">
+            <th> EMPLOYER ID </th>
+            <th> EMPLOYER FIRST NAME </th>
+            <th> EMPLOYER LAST NAME  </th>
+            <th> EMPLOYER EMAIL </th>
+            <th> EMPLOYER ORGANIZATION </th>
+            <th> EMPLOYER USER NAME </th>
+            <th> EMPLOYER VERIFICATION STATUS </th>
+            <tbody ng-repeat= "(key,value) in needApprovalList">
+            <tr ng-repeat="(key,v) in value" ng-click="profileView(v)">
+                <td ng-repeat="(key,val) in v" >
+                    {{val}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="col-md-9 col-md-offset-1">
+        <h4 style="color:green"> <b><u>ALL OFF CAMPUS EMPLOYERS </u></b></h4>
+        <table class="table table-hover">
+            <th> EMPLOYER ID </th>
+            <th> EMPLOYER FIRST NAME </th>
+            <th> EMPLOYER LAST NAME  </th>
+            <th> EMPLOYER EMAIL </th>
+            <th> EMPLOYER ORGANIZATION </th>
+            <th> EMPLOYER USER NAME </th>
+            <th> EMPLOYER VERIFICATION STATUS </th>
+
+            <tbody ng-repeat= "(key,value) in allList">
+            <tr ng-repeat="(key,v) in value" ng-click="profileView(v)">
+                <td ng-repeat="(key,val) in v" >
+                    {{val}}
+                </td>
+
+            </tr>
+            </tbody>
+
+
+
+        </table>
+
+    </div>
+</div>

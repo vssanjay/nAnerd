@@ -1,0 +1,55 @@
+<div ng-controller="applyJobController as vm">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Need A nerd</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#!/dashboardStudent">Home</a></li>
+                <li><a href="#!/studentProfile">Profile</a></li>
+                <li><a href="#!/applyJobs">Apply Jobs</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!/notificationStudent">Notifications</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="col-md-9 col-md-offset-1">
+    <b> CLICK ON A ROW TO KNOW MORE ABOUT THE JOB </b>
+        <br><br>
+
+        Search By
+        <select ng-model="columns" ng-options="e for e in headers">
+            <option value=""></option>
+        </select>
+
+        <!--BIND THE SEARCH BOX TO THE SELECT ELEMENT-->
+        Search <input type="text" ng-model="search[columns]"
+                      placeholder="Enter some text to search" />
+        <br><br>
+
+    <table class="table table-hover">
+        <th> JOB ID </th>
+        <th> JOB NAME </th>
+        <th> JOB DESC </th>
+        <th> SKILLS </th>
+        <th> END DATE </th>
+        <th> SALARY </th>
+
+        <th> EMPLOYER ORGANIZATION </th>
+
+        <tbody ng-repeat= "(key,value) in jobList">
+        <tr ng-repeat="(key,v) in value |filter : search" ng-click="apply(v)">
+            <td ng-repeat="(key,val) in v" >
+                {{val}}
+            </td>
+
+        </tr>
+        </tbody>
+
+
+
+    </table>
+</div>
+</div>
